@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/script.js" defer></script>
+</head>
+<body>
+
+<nav>
+<div class="logo">Quick Mart</div>
+<ul>
+<li><input type="text" id="search" placeholder="Search..." class="search-bar" onkeyup="filterProducts()"></li>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../pages/product.html">Products</a></li>
+<li><a href="../pages/about.html">About</a></li>
+<li><a href="../pages/contact.html">Contact</a></li>
+<li><a href="../pages/login.html">Login</a></li>
+<li><a href="../pages/signup.html">Signup</a></li>
+<li><a href="../pages/feedback.html">Feedback</a></li>
+<li class="cart-toggle" onclick="toggleCart()">🛒 <span class="cart-count" id="cart-count">0</span></li>
+</ul>
+</nav>
+<!-- ================================================ -->
+<!-- Cart Sidebar -->
+<div class="cart-sidebar" id="cart">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <span onclick="toggleCart()" class="close-cart">✖</span>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+        <p>Your cart is empty</p>
+    </div>
+
+    <div class="cart-footer">
+        <h4>Total: ₹<span id="cart-total">0</span></h4>
+        <button onclick="proceedToCheckout()" class="checkout-btn" id="checkout-btn" style="width: 100%; padding: 0.8rem; margin-top: 1rem; background: #0f7938; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 1rem;">Proceed to Checkout</button>
+    </div>
+</div>
+<!-- =========================================================== -->
+<section class="products-section">
+    <h2>Our Products</h2>
+
+    <div class="container">
+    <h1 class="heading">Our Fresh Grocery Collection</h1>
+    <p class="sub-heading">Choose from fresh fruits, vegetables & daily grocery essentials</p>
+
+    <div class="products-grid">
+
+        <!-- Fruits -->
+        <div class="product-card fruits">
+            <img src="../img/Apples.jpg" alt="Apple">
+            <h3>Fresh Apples</h3>
+            <p>₹120 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card fruits">
+            <img src="../img/babana.jpg" alt="Banana">
+            <h3>Bananas</h3>
+            <p>₹60 / dozen</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card fruits">
+            <img src="../img/Papaya.jpg" alt="Papaya">
+            <h3>Papaya</h3>
+            <p>₹100 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        
+        <div class="product-card fruits">
+            <img src="../img/Guava.jpg" alt="Watermelo">
+            <h3>Guava</h3>
+            <p>₹100 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card fruits">
+            <img src="../img/Orange.jpg" alt="Watermelo">
+            <h3>Orange</h3>
+            <p>₹100 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card fruits">
+            <img src="../img/grapes.jpg" alt="Watermelo">
+            <h3>Grapes</h3>
+            <p>₹100 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card fruits">
+            <img src="../img/rasberray.jpg" alt="Watermelo">
+            <h3>Rasberry</h3>
+            <p>₹100 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card fruits">
+            <img src="../img/strawberry.jpg" alt="Watermelo">
+            <h3>Strawberry</h3>
+            <p>₹100 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card fruits">
+            <img src="../img/draganfruit.jpg" alt="Watermelo">
+            <h3>Dragun</h3>
+            <p>₹100 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+
+        <!-- Vegetables -->
+        <div class="product-card vegetables">
+            <img src="../img/Tomato.jpg" alt="Tomato">
+            <h3>Tomatoes</h3>
+            <p>₹40 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card vegetables">
+            <img src="../img/potato.jpg" alt="Potato">
+            <h3>Potato</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card vegetables">
+            <img src="../img/Brinjal.jpg" alt="Potato">
+            <h3>Brinjal</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card vegetables">
+            <img src="../img/Colliflower.jpg" alt="Potato">
+            <h3>Colliflower</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card vegetables">
+            <img src="../img/Green Chilli.jpg" alt="Potato">
+            <h3>Green Chilli</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card vegetables">
+            <img src="../img/Ladies Finger.jpg" alt="Potato">
+            <h3>Ladies Finger</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card vegetables">
+            <img src="../img/onion.jpg" alt="Potato">
+            <h3>Onion</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card vegetables">
+            <img src="../img/pumpkin.jpg" alt="Potato">
+            <h3>Pumpkin</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+<div class="product-card vegetables">
+            <img src="../img/Flower.jpg" alt="Potato">
+            <h3>Flower</h3>
+            <p>₹30 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <!-- Grocery -->
+        <div class="product-card grocery">
+            <img src="../img/ketchup.jpg" alt="Rice">
+            <h3>ketchup</h3>
+            <p>₹15 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card grocery">
+            <img src="../img/oil.jpg" alt="Cooking Oil">
+            <h3>Sunflower Oil</h3>
+            <p>₹140 / litre</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card grocery">
+            <img src="../img/Maggie.jpg" alt="Rice">
+            <h3>Maggie</h3>
+            <p>₹90 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card grocery">
+            <img src="../img/Milk.jpg" alt="Rice">
+            <h3>Milk</h3>
+            <p>₹90 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card grocery">
+            <img src="../img/Wheat Flour.jpg" alt="Rice">
+            <h3>Wheat Flour</h3>
+            <p>₹90 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card grocery">
+            <img src="../img/kitkat.jpg" alt="Rice">
+            <h3>Kit Kat</h3>
+            <p>₹90 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card grocery">
+            <img src="../img/oreo.jpg" alt="Rice">
+            <h3>Oreo</h3>
+            <p>₹90 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card grocery">
+            <img src="../img/cokokola.jpg" alt="Rice">
+            <h3>Coka cola</h3>
+            <p>₹90 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card grocery">
+            <img src="../img/dove.jpg" alt="Rice">
+            <h3>Dove</h3>
+            <p>₹90 / kg</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+    </div>
+</div>
+
+    
+</section>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+
+    if (category) {
+        const products = document.querySelectorAll(".product-card");
+
+        products.forEach(product => {
+            if (!product.classList.contains(category)) {
+                product.style.display = "none";
+            }
+        });
+    }
+</script>
+<div id="success-popup" class="success-popup">
+    <div class="popup-content">
+        ✅ Product added to cart successfully!
+    </div>
+</div>
+<footer>
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <h3>Quick Mart</h3>
+                <p>Discover timeless elegance...</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="../pages/product.html">Products</a>
+                <a href="../pages/about.html">About Us</a>
+                <a href="../pages/contact.html">Contact</a>
+                <a href="../pages/login.html">Login</a>
+                <a href="../pages/signup.html">Signup</a>
+                <a href="../pages/feedback.html">Feedback</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><a href="https://maps.app.goo.gl/obah4BUpE5US12ti7">📍Nashik Maharashtr, India</a></p>
+                <p><a href="tel:+1234567890">📞 +91 1234567890</a></p>
+                <p><a href="mailto:sakshi07bhosale@gmail.com">✉️ sakshi07bhosale@gmail.com</a></p>
+            </div>
+
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://facebook.com" target="_blank">
+                    <img src="../img/whatsapp.png" class="social-icon"> Whatsapp
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="../img/insta.png" class="social-icon"> Instagram
+                </a>
+                <a href="https://wa.me/919876543210" target="_blank">
+                    <img src="../img/call.png" class="social-icon">Call
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="../img/mail.png" class="social-icon"> Mail
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Quick Mart. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

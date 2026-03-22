@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Quick Mart</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/payment.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <div class="logo">Quick Mart</div>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../products.html">Products</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+        <li><a href="../pages/login.html">Login</a></li>
+    </ul>
+</nav>
+
+<!-- ================= PAYMENT SECTION ================= -->
+<div class="payment-container">
+    <div class="payment-content">
+        
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="order-items" id="order-items">
+                <!-- Items will be populated here -->
+            </div>
+            <div class="order-total">
+                <span>Subtotal:</span>
+                <span>₹<span id="subtotal">0</span></span>
+            </div>
+            <div class="order-total">
+                <span>Delivery Charge:</span>
+                <span>₹<span id="delivery">50</span></span>
+            </div>
+            <div class="order-total grand-total">
+                <span>Grand Total:</span>
+                <span>₹<span id="grand-total">0</span></span>
+            </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <h2>Select Payment Method</h2>
+            
+            <form id="payment-form">
+                <!-- Credit Card -->
+                <div class="payment-option">
+                    <input type="radio" id="credit-card" name="payment-method" value="credit-card" required>
+                    <label for="credit-card" class="payment-label">
+                        <span class="icon">💳</span>
+                        <span class="method-name">Credit Card</span>
+                    </label>
+                    <div class="payment-details" id="credit-card-details">
+                        <input type="text" placeholder="Cardholder Name" class="input-field">
+                        <input type="text" placeholder="Card Number (16 digits)" class="input-field" maxlength="19">
+                        <div class="card-row">
+                            <input type="text" placeholder="MM/YY" class="input-field" maxlength="5">
+                            <input type="text" placeholder="CVV" class="input-field" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Debit Card -->
+                <div class="payment-option">
+                    <input type="radio" id="debit-card" name="payment-method" value="debit-card">
+                    <label for="debit-card" class="payment-label">
+                        <span class="icon">🏧</span>
+                        <span class="method-name">Debit Card</span>
+                    </label>
+                    <div class="payment-details" id="debit-card-details">
+                        <input type="text" placeholder="Cardholder Name" class="input-field">
+                        <input type="text" placeholder="Card Number (16 digits)" class="input-field" maxlength="19">
+                        <div class="card-row">
+                            <input type="text" placeholder="MM/YY" class="input-field" maxlength="5">
+                            <input type="text" placeholder="CVV" class="input-field" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UPI -->
+                <div class="payment-option">
+                    <input type="radio" id="upi" name="payment-method" value="upi">
+                    <label for="upi" class="payment-label">
+                        <span class="icon">📱</span>
+                        <span class="method-name">UPI (Google Pay, PhonePe, Paytm)</span>
+                    </label>
+                    <div class="payment-details" id="upi-details">
+                        <input type="email" placeholder="Enter UPI ID (e.g., name@upi)" class="input-field">
+                        <p class="info-text">You'll be redirected to your UPI app for payment</p>
+                    </div>
+                </div>
+
+                <!-- Net Banking -->
+                <div class="payment-option">
+                    <input type="radio" id="net-banking" name="payment-method" value="net-banking">
+                    <label for="net-banking" class="payment-label">
+                        <span class="icon">🏦</span>
+                        <span class="method-name">Net Banking</span>
+                    </label>
+                    <div class="payment-details" id="net-banking-details">
+                        <select class="input-field">
+                            <option value="">Select Your Bank</option>
+                            <option value="sbi">State Bank of India (SBI)</option>
+                            <option value="hdfc">HDFC Bank</option>
+                            <option value="icici">ICICI Bank</option>
+                            <option value="axis">Axis Bank</option>
+                            <option value="boi">Bank of India</option>
+                            <option value="pnb">Punjab National Bank</option>
+                            <option value="kotak">Kotak Mahindra Bank</option>
+                            <option value="yes">YES Bank</option>
+                            <option value="idbi">IDBI Bank</option>
+                            <option value="indusind">IndusInd Bank</option>
+                        </select>
+                        <p class="info-text">You'll be redirected to your bank's website for payment</p>
+                    </div>
+                </div>
+
+                <!-- Digital Wallet -->
+                <div class="payment-option">
+                    <input type="radio" id="wallet" name="payment-method" value="wallet">
+                    <label for="wallet" class="payment-label">
+                        <span class="icon">👛</span>
+                        <span class="method-name">Digital Wallet</span>
+                    </label>
+                    <div class="payment-details" id="wallet-details">
+                        <select class="input-field">
+                            <option value="">Select Wallet</option>
+                            <option value="paytm">Paytm Wallet</option>
+                            <option value="amazonpay">Amazon Pay</option>
+                            <option value="airtel">Airtel Money</option>
+                            <option value="freecharge">Freecharge</option>
+                            <option value="mobikwik">MobiKwik</option>
+                        </select>
+                        <p class="info-text">Quick and secure payment using your wallet balance</p>
+                    </div>
+                </div>
+
+                <!-- Cash on Delivery -->
+                <div class="payment-option">
+                    <input type="radio" id="cod" name="payment-method" value="cod">
+                    <label for="cod" class="payment-label">
+                        <span class="icon">💵</span>
+                        <span class="method-name">Cash on Delivery (COD)</span>
+                    </label>
+                    <div class="payment-details" id="cod-details">
+                        <p class="info-text">Pay ₹<span id="cod-amount">0</span> when delivery agent arrives at your location</p>
+                        <p class="warning-text">⚠️ A small delivery fee may apply for COD orders</p>
+                    </div>
+                </div>
+
+                <!-- EMI Option -->
+                <div class="payment-option">
+                    <input type="radio" id="emi" name="payment-method" value="emi">
+                    <label for="emi" class="payment-label">
+                        <span class="icon">📊</span>
+                        <span class="method-name">EMI (No Cost EMI)</span>
+                    </label>
+                    <div class="payment-details" id="emi-details">
+                        <select class="input-field">
+                            <option value="">Select EMI Duration</option>
+                            <option value="3">3 Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="12">12 Months</option>
+                        </select>
+                        <p class="info-text">Available for transactions above ₹5000</p>
+                        <p class="interest-text">No additional interest charges</p>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- Billing Address -->
+            <div class="billing-address">
+                <h3>Billing Address</h3>
+                <div class="address-form">
+                    <input type="text" placeholder="Full Name" class="input-field">
+                    <input type="email" placeholder="Email Address" class="input-field">
+                    <input type="tel" placeholder="Phone Number" class="input-field">
+                    <textarea placeholder="Street Address" class="input-field textarea" rows="3"></textarea>
+                    <div class="address-row">
+                        <input type="text" placeholder="City" class="input-field">
+                        <input type="text" placeholder="State" class="input-field">
+                        <input type="text" placeholder="ZIP Code" class="input-field">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="payment-actions">
+                <button onclick="window.history.back()" class="btn-cancel">Back to Cart</button>
+                <button onclick="processPayment()" class="btn-pay">Pay ₹<span id="pay-amount">0</span></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div id="success-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header success">✅</div>
+        <h2>Payment Successful!</h2>
+        <p>Your order has been placed successfully.</p>
+        <p class="order-no">Order ID: <strong id="order-id"></strong></p>
+        <p class="order-delivery">Your delivery will arrive in <strong>10-15 minutes</strong></p>
+        <button onclick="window.location.href='index.html'" class="btn-primary">Continue Shopping</button>
+    </div>
+</div>
+
+<!-- Error Modal -->
+<div id="error-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header error">❌</div>
+        <h2>Payment Failed!</h2>
+        <p id="error-message">Something went wrong. Please try again.</p>
+        <button onclick="closeErrorModal()" class="btn-primary">Try Again</button>
+    </div>
+</div>
+
+<script src="payment.js"></script>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h3>Quick Mart</h3>
+            <p>Discover timeless elegance...</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="../index.html">Home</a>
+            <a href="../pages/product.html">Products</a>
+            <a href="../pages/about.html">About Us</a>
+            <a href="../pages/contact.html">Contact</a>
+            <a href="../pages/login.html">Login</a>
+            <a href="../pages/signup.html">Signup</a>
+            <a href="../pages/feedback.html">Feedback</a>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p><a href="https://maps.app.goo.gl/obah4BUpE5US12ti7">📍Nashik Maharashtr, India</a></p>
+            <p><a href="tel:+1234567890">📞 +91 1234567890</a></p>
+            <p><a href="mailto:sakshi07bhosale@gmail.com">✉️ sakshi07bhosale@gmail.com</a></p>
+        </div>
+
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="https://facebook.com" target="_blank">
+                <img src="../img/whatsapp.png" class="social-icon"> Whatsapp
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="../img/insta.png" class="social-icon"> Instagram
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank">
+                <img src="../img/call.png" class="social-icon">Call
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="../img/mail.png" class="social-icon"> Mail
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Quick Mart. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback</title>
+
+<link rel="stylesheet" href="../css/feedback.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/feedback.js" defer></script>
+
+</head>
+<body>
+
+<!-- ✅ FIXED NAVBAR -->
+<nav>
+<div class="logo">Quick Mart</div>
+<ul>
+<li><input type="text" id="search" placeholder="Search..." class="search-bar"></li>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../pages/product.html">Products</a></li>
+<li><a href="../pages/about.html">About</a></li>
+<li><a href="../pages/contact.html">Contact</a></li>
+<li><a href="../pages/login.html">Login</a></li>
+<li><a href="../pages/signup.html">Signup</a></li>
+<li><a href="../pages/feedback.html">Feedback</a></li>
+<li class="cart-toggle">🛒 <span id="cart-count">0</span></li>
+</ul>
+</nav>
+
+<!-- ================= FEEDBACK ================= -->
+<div class="feedback-container">
+    <h2>We Value Your Feedback 💚</h2>
+
+    <form id="feedbackForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <div class="rating">
+            <span data-value="5">★</span>
+            <span data-value="4">★</span>
+            <span data-value="3">★</span>
+            <span data-value="2">★</span>
+            <span data-value="1">★</span>
+        </div>
+
+        <textarea id="message" rows="4" placeholder="Write your feedback..." required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <h3>🎉 Thank You!</h3>
+        <p>Your feedback has been submitted successfully.</p>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+<div class="footer-container">
+
+<div class="footer-about">
+<h3>Quick Mart</h3>
+<p>Discover timeless elegance...</p>
+</div>
+
+<div class="footer-links">
+<h4>Quick Links</h4>
+<a href="../index.html">Home</a>
+<a href="../pages/product.html">Products</a>
+<a href="../pages/about.html">About Us</a>
+<a href="../pages/contact.html">Contact</a>
+<a href="../pages/login.html">Login</a>
+<a href="../pages/signup.html">Signup</a>
+<a href="../pages/feedback.html">Feedback</a>
+</div>
+<div class="footer-contact">
+                <h4>Contact</h4>
+                <p><a href="https://maps.app.goo.gl/obah4BUpE5US12ti7">📍Nashik Maharashtr, India</a></p>
+                <p><a href="tel:+1234567890">📞 +91 1234567890</a></p>
+                <p><a href="mailto:sakshi07bhosale@gmail.com">✉️ sakshi07bhosale@gmail.com</a></p>
+            </div>
+
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://facebook.com" target="_blank">
+                    <img src="../img/whatsapp.png" class="social-icon"> Whatsapp
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="../img/insta.png" class="social-icon"> Instagram
+                </a>
+                <a href="https://wa.me/919876543210" target="_blank">
+                    <img src="../img/call.png" class="social-icon">Call
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="../img/mail.png" class="social-icon"> Mail
+                </a>
+            </div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Quick Mart</p>
+</div>
+</footer>
+
+</body>
+</html>
