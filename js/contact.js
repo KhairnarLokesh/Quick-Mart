@@ -1,35 +1,39 @@
-// Contact Form Validation
+// Contact Form Validation + Modal Popup
 
 document.addEventListener("DOMContentLoaded", function () {
 
-const contactForm = document.getElementById("contactForm");
+    const contactForm = document.getElementById("contactForm");
 
-if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const message = document.getElementById("message").value.trim();
-        const formMessage = document.getElementById("formMessage");
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const message = document.getElementById("message").value.trim();
 
-        if (name === "" || email === "" || phone === "" || message === "") {
-            formMessage.style.color = "red";
-            formMessage.textContent = "Please fill all fields!";
-            return;
-        }
+            if (name === "" || email === "" || phone === "" || message === "") {
+                alert("Please fill all fields!");
+                return;
+            }
 
-        if (!email.includes("@")) {
-            formMessage.style.color = "red";
-            formMessage.textContent = "Enter valid email!";
-            return;
-        }
+            if (!email.includes("@")) {
+                alert("Enter a valid email!");
+                return;
+            }
 
-        formMessage.style.color = "green";
-        formMessage.textContent = "Message sent successfully!";
-        contactForm.reset();
-    });
-}
+            // Show success modal
+            const modal = document.getElementById("successModal");
+            modal.style.display = "flex";
+
+            contactForm.reset();
+        });
+    }
 
 });
+
+// Close modal
+function closeModal() {
+    document.getElementById("successModal").style.display = "none";
+}

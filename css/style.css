@@ -123,6 +123,25 @@ nav ul li a:hover{
   display:block;
 }
 
+.card .btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 25px;
+  background:#00c853;
+  color:#fff;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.card .btn:hover{
+  background:#009624;
+  transform:scale(1.05);
+}
+
 /* ================= PRODUCTS ================= */
 .products-section{
   padding:60px 8%;
